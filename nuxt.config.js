@@ -5,14 +5,14 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Count On Us',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favico.png' }
     ]
   },
   /*
@@ -23,6 +23,7 @@ export default {
   ** Global CSS
   */
   css: [
+    '~assets/styles/main.css'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -40,11 +41,13 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://github.com/nuxt-community/modules/tree/master/packages/bulma
-    '@nuxtjs/bulma',
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    'nuxt-fontawesome',
+    'nuxt-buefy'
   ],
+  buefy: {
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
@@ -67,5 +70,14 @@ export default {
     */
     extend (config, ctx) {
     }
+  },
+
+  transition: {
+    name: 'fade',
+    mode: 'out-in'
+  },
+
+  router: {
+    linkActiveClass: 'is-active'
   }
 }

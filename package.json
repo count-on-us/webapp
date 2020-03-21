@@ -13,9 +13,13 @@
     "test": "jest"
   },
   "dependencies": {
-    "nuxt": "^2.0.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.27",
+    "@fortawesome/vue-fontawesome": "^0.1.9",
+    "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/bulma": "^1.2.1",
-    "@nuxtjs/axios": "^5.3.6"
+    "nuxt": "^2.0.0",
+    "nuxt-buefy": "^0.3.24",
+    "nuxt-fontawesome": "^0.4.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.0.1",
