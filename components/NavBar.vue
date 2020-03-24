@@ -14,17 +14,23 @@
 
     <template slot="end">
       <b-navbar-item
-        href="#"
         tag="nuxt-link"
         to="/"
+        exact
       >
-        Home
+        Início
       </b-navbar-item>
       <b-navbar-item
         tag="nuxt-link"
         to="/how-it-works"
       >
         Como funciona?
+      </b-navbar-item>
+      <b-navbar-item
+        tag="nuxt-link"
+        to="/moderator/signin"
+      >
+        Login
       </b-navbar-item>
       <b-navbar-item
         tag="div"
