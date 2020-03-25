@@ -12,9 +12,16 @@
             Como funciona?
           </h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ratione explicabo nobis, alias quia voluptate nihil eius deleniti! Voluptas assumenda molestias veritatis odit explicabo maiores modi consectetur nostrum recusandae alias?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quasi eaque at, blanditiis deserunt iste earum, nesciunt distinctio eos commodi necessitatibus veritatis. Voluptatem culpa nesciunt officia omnis veniam nam illo?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit aspernatur excepturi totam necessitatibus hic quo magnam aliquam sunt culpa id tempore eius similique quae voluptate, placeat nihil, eligendi assumenda tenetur!
+            A Count On Us veio para servir como uma ponte!
+          </p>
+          <p>
+            Desssa forma, se você é um(a) participante, a partir do seu cadastro você será alertado de quando um(a) de nossos(as) mediadores(as) estiver disponível para uma conversa coletiva (com limite de pessoas) ou individual.
+          </p>
+          <p>
+            Já se você é um(a) mediador(a), você terá acesso ao contato de nossos participantes, poderá marcar os horários em que estará disponível para prestar auxílio e conduzir chats via WhatsApp, Hangouts ou Skype.
+          </p>
+          <p>
+            Todos(as) os(as) nossos(as) mediadores(as) são psicólogos(as), psiquiatras ou psicanalistas com carteira de registro em seus respectivos conselhos. Tudo para garantir que o trabalho deles de fato proporcione conforto e bem estar para nossos(as) participantes!
           </p>
         </div>
         <h2 class="subtitle has-text-centered">
