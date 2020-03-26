@@ -23,6 +23,9 @@
           <p>
             Todos(as) os(as) nossos(as) mediadores(as) são psicólogos(as), psiquiatras ou psicanalistas com carteira de registro em seus respectivos conselhos. Tudo para garantir que o trabalho deles de fato proporcione conforto e bem estar para nossos(as) participantes!
           </p>
+          <p>
+               Todo serviço prestado é gratuito e sem fins lucrativos. Os profissionais participantes são todos voluntários.
+          </p>
         </div>
         <h2 class="subtitle has-text-centered">
           Junte-se a nós!
