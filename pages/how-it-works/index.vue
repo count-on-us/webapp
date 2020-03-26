@@ -15,7 +15,7 @@
             A Count On Us veio para servir como uma ponte! Um ponte que liga pessoas em isolamento por causa da pandemia do COVID-19 e que precisam de ajuda psicológica para vencer esse desafio, com profissionais de saúde voluntários dispostos a ajudar.
           </p>
           <p>
-            Desssa forma, se você é um(a) participante, a partir do seu cadastro você será alertado de quando um(a) de nossos(as) mediadores(as) estiver disponível para uma conversa coletiva (com limite de pessoas) ou individual.
+            Desssa forma, se você é um(a) participante, a partir do seu cadastro você será alertado via e-mail quando um(a) de nossos(as) mediadores(as) estiver disponível para uma conversa coletiva (com limite de pessoas) ou individual, de acordo com a fila de espera.
           </p>
           <p>
             Já se você é um(a) mediador(a), poderá iniciar uma reunião online em qualquer serviço (skype, jitsi, hangouts, zoom...) de sua escolha e poderá disparar e-mails para a quantidade de participantes que desejar atender. Os participantes serão convidados automaticamente de acordo com a fila do sistema.
