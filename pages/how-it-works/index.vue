@@ -12,7 +12,7 @@
             Como funciona?
           </h1>
           <p>
-            A Count On Us veio para servir como uma ponte!
+            A Count On Us veio para servir como uma ponte! Um ponte que liga pessoas em isolamento por causa da pandemia do COVID-19 e que precisam de ajuda psicológica para vencer esse desafio, com profissionais de saúde voluntários dispostos a ajudar.
           </p>
           <p>
             Desssa forma, se você é um(a) participante, a partir do seu cadastro você será alertado de quando um(a) de nossos(as) mediadores(as) estiver disponível para uma conversa coletiva (com limite de pessoas) ou individual.
