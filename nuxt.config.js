@@ -29,7 +29,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~/plugins/validate.js'
+    '~/plugins/validate.js',
+    '~/plugins/mask.js'
   ],
   /*
   ** Nuxt.js dev-modules

@@ -13,51 +13,7 @@
           </h1>
           <div class="columns is-centered">
             <div class="column is-half">
-              <form>
-                <b-field
-                  label="E-mail"
-                >
-                  <b-input
-                    v-model="form.email"
-                    type="email"
-                    placeholder="Insira seu e-mail"
-                  />
-                </b-field>
-
-                <b-field label="Senha">
-                  <b-input
-                    v-model="form.password"
-                    type="password"
-                    placeholder="Insira sua senha"
-                    password-reveal
-                  />
-                </b-field>
-
-                <div class="level">
-                  <div class="level-left">
-                    <div class="level-item">
-                      <nuxt-link
-                        to="/moderator/signup"
-                        class=""
-                      >
-                        Não possuo login
-                      </nuxt-link>
-                    </div>
-                  </div>
-
-                  <!-- Right side -->
-                  <div class="level-right">
-                    <div class="level-item">
-                      <b-button
-                        type="is-success"
-                        native-type="submit"
-                      >
-                        Entrar
-                      </b-button>
-                    </div>
-                  </div>
-                </div>
-              </form>
+              <moderator-signin-form />
             </div>
           </div>
         </div>
@@ -68,10 +24,12 @@
 
 <script>
 import NavBar from '@/components/NavBar'
+import ModeratorSigninForm from '@/components/ModeratorSigninForm'
 
 export default {
   components: {
-    NavBar
+    NavBar,
+    ModeratorSigninForm
   },
   data () {
     return {

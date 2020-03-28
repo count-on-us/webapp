@@ -134,7 +134,6 @@ export default {
 
   methods: {
     handleSubmit (form) {
-      console.log(form)
     },
 
     updateDiffs () {
