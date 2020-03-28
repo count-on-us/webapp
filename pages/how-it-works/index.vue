@@ -12,15 +12,36 @@
             Como funciona?
           </h1>
           <p>
-            A Count On Us veio para servir como uma ponte! Um ponte que liga pessoas em isolamento por causa da pandemia do COVID-19 e que precisam de ajuda psicológica para vencer esse desafio, com profissionais de saúde voluntários dispostos a ajudar.
+            A <span class="has-text-weight-bold">Count On Us</span> veio para servir como uma ponte!
+            <br>
+            Uma ponte que liga pessoas (em isolamento por causa da pandemia do COVID-19 e que precisam de ajuda psicológica para vencer esse desafio) à profissionais de saúde voluntários.
           </p>
+
+          <h3 class="has-text-warning">
+            Participante
+          </h3>
           <p>
-            Desssa forma, se você é um(a) participante, a partir do seu cadastro você será alertado via e-mail quando um(a) de nossos(as) mediadores(as) estiver disponível para uma conversa coletiva (com limite de pessoas) ou individual, de acordo com a fila de espera.
+            Desssa forma, se você é um(a) participante, ao cadastrar-se você será alertado via e-mail quando um(a) de nossos(as) mediadores(as) estiver disponível para uma conversa coletiva ou individual.
+            <br>
+            Os convites são enviados de acordo com a fila de espera.
           </p>
+
+          <h3 class="has-text-danger">
+            Mediador
+          </h3>
           <p>
-            Já se você é um(a) mediador(a), poderá iniciar uma reunião online em qualquer serviço (skype, jitsi, hangouts, zoom...) de sua escolha e poderá disparar e-mails para a quantidade de participantes que desejar atender. Os participantes serão convidados automaticamente de acordo com a fila do sistema.
-            Após se cadastrar, nossa equipe de voluntários se encarregará de confirmar o seu cadastro após a análise dos dados. Então você poderá iniciar suas reuniões e contribuir com as pessoas que precisam de ajuda nesse momento difícil.
+            Já se você é um(a) mediador(a), após se cadastrar, nossa equipe de voluntários se encarregará de confirmar o seu cadastro mediante análise dos dados.
+            <br>
+            A análise do cadastro é importante, pois queremos garantir a qualidade do serviço e que nenhuma pessoa sofra algum dano durante os encontros.
+            <br>
+            Após a confirmação, você então poderá iniciar uma reunião online em qualquer serviço (skype, jitsi, hangouts, zoom...) de sua escolha e poderá disparar e-mails para a quantidade de participantes que desejar atender.
+            <br>
+            Os participantes serão convidados automaticamente de acordo com a fila do sistema.
           </p>
+
+          <h3 class="has-text-white">
+            Observações
+          </h3>
           <p>
             Todos(as) os(as) nossos(as) mediadores(as) são psicólogos(as), psiquiatras ou psicanalistas com carteira de registro em seus respectivos conselhos. Tudo para garantir que o trabalho deles de fato proporcione conforto e bem estar para nossos(as) participantes!
           </p>
