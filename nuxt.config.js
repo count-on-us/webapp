@@ -29,6 +29,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/validate.js'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -44,7 +45,11 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     'nuxt-fontawesome',
-    'nuxt-buefy'
+    'nuxt-buefy',
+    ['nuxt-validate', {
+      lang: 'pt_BR'
+    }],
+    'nuxt-dayjs-module'
   ],
   buefy: {
   },
