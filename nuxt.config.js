@@ -13,7 +13,15 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favico.png' }
+    ],
+    script: [
+      {
+        src: 'https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicitps://cdn.jsdelivr.net/npm/vue/dist/vue.js',
+        async: true,
+        defer: true
+      }
     ]
+
   },
   /*
   ** Customize the progress-bar color
@@ -78,12 +86,16 @@ export default {
     }
   },
 
-  transition: {
+  pageTransition: {
     name: 'fade',
     mode: 'out-in'
   },
 
   router: {
     linkActiveClass: 'is-active'
+  },
+
+  env: {
+    recaptchaSiteKey: '6LeGrOUUAAAAAKMZFyYQrCjSnBtdcfD0SAx88Thr'
   }
 }

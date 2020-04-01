@@ -13,6 +13,7 @@
           :type="{ 'is-danger': errors[0], 'is-success': valid }"
           :message="errors"
           label="Nome"
+          class="mb-3"
         >
           <b-input
             v-model="form.name"
@@ -30,6 +31,7 @@
           :type="{ 'is-danger': errors[0], 'is-success': valid }"
           :message="errors"
           label="E-mail"
+          class="mb-3"
         >
           <b-input
             v-model="form.email"
@@ -38,6 +40,11 @@
           />
         </b-field>
       </ValidationProvider>
+
+      <recaptcha
+        @verify="handleRecaptchaVerify"
+        class="mb-3"
+      />
 
       <div class="level">
         <div class="level-left">
@@ -70,16 +77,33 @@
 </template>
 
 <script>
+import Recaptcha from '@/components/Recaptcha'
+
 export default {
+  components: {
+    Recaptcha
+  },
   data () {
     return {
-      form: {}
+      form: {
+        recaptcha: false
+      }
     }
   },
   methods: {
     onSubmit () {
       this.$refs.guestSignupForm.validate().then((success) => {
         if (!success) {
+          return
+        }
+
+        if (!this.form.recaptcha) {
+          this.$buefy.toast.open({
+            duration: 3000,
+            message: 'Por favor, clique em não sou um robô.',
+            position: 'is-top-right',
+            type: 'is-warning'
+          })
           return
         }
 
@@ -90,6 +114,10 @@ export default {
           this.$refs.guestSignupForm.reset()
         })
       })
+    },
+
+    handleRecaptchaVerify (value) {
+      this.form.recaptcha = value
     }
   }
 }

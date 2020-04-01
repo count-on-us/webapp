@@ -13,6 +13,7 @@
           :type="{ 'is-danger': errors[0], 'is-success': valid }"
           :message="errors"
           label="Nome"
+          class="mb-3"
         >
           <b-input
             v-model="form.name"
@@ -29,6 +30,7 @@
           :type="{ 'is-danger': errors[0], 'is-success': valid }"
           :message="errors"
           label="E-mail"
+          class="mb-3"
         >
           <b-input
             v-model="form.email"
@@ -47,6 +49,7 @@
           :type="{ 'is-danger': errors[0], 'is-success': valid }"
           :message="errors"
           label="Profissão"
+          class="mb-3"
         >
           <b-select
             v-model="form.job"
@@ -72,6 +75,7 @@
           :type="{ 'is-danger': errors[0], 'is-success': valid }"
           :message="errors"
           label="Registro no conselho"
+          class="mb-3"
         >
           <b-input
             v-model="form.register"
@@ -89,10 +93,10 @@
           :type="{ 'is-danger': errors[0], 'is-success': valid }"
           :message="errors"
           label="Telefone"
+          class="mb-3"
         >
           <b-input
             v-model="form.phone"
-            v-mask="'(##) #####-####'"
             placeholder="Insira seu telefone"
             type="tel"
           />
@@ -109,6 +113,7 @@
           :type="{ 'is-danger': errors[0], 'is-success': valid }"
           :message="errors"
           label="Senha"
+          class="mb-3"
         >
           <b-input
             v-model="form.password"
@@ -128,6 +133,7 @@
           :type="{ 'is-danger': errors[0], 'is-success': valid }"
           :message="errors"
           label="Confirme a senha"
+          class="mb-3"
         >
           <b-input
             v-model="form.passwordConfirm"
@@ -137,6 +143,11 @@
           />
         </b-field>
       </ValidationProvider>
+
+      <recaptcha
+        @verify="handleRecaptchaVerify"
+        class="mb-3"
+      />
 
       <div class="level">
         <div class="level-left">
@@ -168,10 +179,17 @@
 </template>
 
 <script>
+import Recaptcha from '@/components/Recaptcha'
+
 export default {
+  components: {
+    Recaptcha
+  },
   data () {
     return {
-      form: {},
+      form: {
+        recaptcha: false
+      },
       jobOptions: [
         {
           text: 'Psicólogo',
@@ -195,6 +213,16 @@ export default {
           return
         }
 
+        if (!this.form.recaptcha) {
+          this.$buefy.toast.open({
+            duration: 3000,
+            message: 'Por favor, clique em não sou um robô.',
+            position: 'is-top-right',
+            type: 'is-warning'
+          })
+          return
+        }
+
         this.$emit('submit', this.form)
         this.form = {}
 
@@ -202,6 +230,10 @@ export default {
           this.$refs.moderatorSignupForm.reset()
         })
       })
+    },
+
+    handleRecaptchaVerify (value) {
+      this.form.recaptcha = value
     }
   }
 }
