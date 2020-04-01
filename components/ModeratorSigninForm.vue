@@ -13,6 +13,7 @@
           :type="{ 'is-danger': errors[0], 'is-success': valid }"
           :message="errors"
           label="E-mail"
+          class="mb-3"
         >
           <b-input
             v-model="form.email"
@@ -31,6 +32,7 @@
           :type="{ 'is-danger': errors[0], 'is-success': valid }"
           :message="errors"
           label="Senha"
+          class="mb-3"
         >
           <b-input
             v-model="form.password"

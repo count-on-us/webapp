@@ -13,6 +13,7 @@
           :type="{ 'is-danger': errors[0], 'is-success': valid }"
           :message="errors"
           label="Link para a sala"
+          class="mb-3"
         >
           <b-input
             v-model="form.link"
@@ -31,6 +32,7 @@
           :type="{ 'is-danger': errors[0], 'is-success': valid }"
           :message="errors"
           label="Senha"
+          class="mb-3"
         >
           <b-input
             v-model="form.password"
@@ -50,6 +52,7 @@
           :type="{ 'is-danger': errors[0], 'is-success': valid }"
           :message="errors"
           label="Quantidade de participantes"
+          class="mb-3"
         >
           <b-input
             v-model="form.guests"
