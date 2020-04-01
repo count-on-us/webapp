@@ -5,6 +5,18 @@
   opacity: 0;
 }
 
+.field.has-addons {
+  flex-wrap: wrap;
+}
+.field.has-addons .help {
+  width: 100%;
+}
+
+.border-right {
+	border-top-right-radius: 4px !important;
+	border-bottom-right-radius: 4px !important;
+}
+
 .m-0 {
 	margin: 0!important
 }

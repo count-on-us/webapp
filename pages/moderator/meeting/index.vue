@@ -1,5 +1,5 @@
 <template>
-  <section class="hero is-primary is-fullheight is-bold">
+  <section class="hero is-light is-fullheight is-bold">
     <div class="hero-head">
       <nav-bar />
     </div>
@@ -19,7 +19,7 @@
                 />
               </section>
               <section>
-                <div class="has-text-centered">
+                <div class="has-text-centered mb-5">
                   <h1>Reunião iniciada</h1>
                   <div class="is-size-1">
                     {{ difference }}
@@ -36,42 +36,39 @@
                       name="participantes"
                     >
                       <b-field
-                        :type="{ 'is-danger': errors[0], 'is-success': valid }"
-                        :message="errors"
                         label="Convidar mais participantes"
                       >
-                        <b-input
-                          v-model="form.guests"
-                          placeholder="Insira o numero de convidados"
-                          type="number"
-                          min="1"
-                          max="15"
-                        />
+                        <div class="field-body">
+                          <b-field
+                            :type="{ 'is-danger': errors[0], 'is-success': valid }"
+                            :message="errors"
+                          >
+                            <b-input
+                              v-model="form.guests"
+                              placeholder="Insira o numero de convidados"
+                              type="number"
+                              min="1"
+                              max="15"
+                              expanded
+                            />
+                            <p class="control mb-0">
+                              <b-button
+                                :disabled="invalid"
+                                type="is-success"
+                                native-type="submit"
+                                class="border-right m-0"
+                              >
+                                Enviar
+                              </b-button>
+                            </p>
+                          </b-field>
+                        </div>
                       </b-field>
                     </ValidationProvider>
-
-                    <div class="level">
-                      <div class="level-left">
-                        <div class="level-item" />
-                      </div>
-
-                      <!-- Right side -->
-                      <div class="level-right">
-                        <div class="level-item">
-                          <b-button
-                            :disabled="invalid"
-                            type="is-success"
-                            native-type="submit"
-                          >
-                            Enviar
-                          </b-button>
-                        </div>
-                      </div>
-                    </div>
                   </form>
                 </ValidationObserver>
 
-                <div class="buttons">
+                <div class="buttons mt-5">
                   <b-button
                     type="is-danger"
                     outlined
@@ -149,6 +146,21 @@ export default {
       diff -= this.minutes * this.intervals.minute
 
       this.seconds = Math.floor(diff / this.intervals.second)
+    },
+
+    onSubmit () {
+      this.$refs.meetingForm.validate().then((success) => {
+        if (!success) {
+          return
+        }
+
+        this.$emit('submit', this.form)
+        this.form = {}
+
+        this.$nextTick(() => {
+          this.$refs.meetingForm.reset()
+        })
+      })
     }
   }
 }
