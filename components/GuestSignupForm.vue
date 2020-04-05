@@ -31,7 +31,7 @@
           :type="{ 'is-danger': errors[0], 'is-success': valid }"
           :message="errors"
           label="E-mail"
-          class="mb-3"
+          class="mb-5"
         >
           <b-input
             v-model="form.email"
@@ -40,6 +40,17 @@
           />
         </b-field>
       </ValidationProvider>
+
+      <p class="has-text-centered mb-5">
+        Ao se cadastrar você concorda com nossos
+        <a
+          @click="handleShowTerms"
+          href="#"
+          type="is-text"
+        >
+          termos de uso.
+        </a>
+      </p>
 
       <recaptcha
         @verify="handleRecaptchaVerify"
@@ -73,21 +84,29 @@
         </div>
       </div>
     </form>
+
+    <terms-of-use
+      :is-active="showTerms"
+      @close="handleClose"
+    />
   </ValidationObserver>
 </template>
 
 <script>
+import TermsOfUse from '@/components/TermsOfUse'
 import Recaptcha from '@/components/Recaptcha'
 
 export default {
   components: {
-    Recaptcha
+    Recaptcha,
+    TermsOfUse
   },
   data () {
     return {
       form: {
         recaptcha: false
-      }
+      },
+      showTerms: false
     }
   },
   methods: {
@@ -118,6 +137,14 @@ export default {
 
     handleRecaptchaVerify (value) {
       this.form.recaptcha = value
+    },
+
+    handleShowTerms () {
+      this.showTerms = true
+    },
+
+    handleClose () {
+      this.showTerms = false
     }
   }
 }

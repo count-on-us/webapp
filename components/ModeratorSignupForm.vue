@@ -133,7 +133,7 @@
           :type="{ 'is-danger': errors[0], 'is-success': valid }"
           :message="errors"
           label="Confirme a senha"
-          class="mb-3"
+          class="mb-5"
         >
           <b-input
             v-model="form.passwordConfirm"
@@ -144,9 +144,20 @@
         </b-field>
       </ValidationProvider>
 
+      <p class="has-text-centered mb-5">
+        Ao se cadastrar você concorda com nossos
+        <a
+          @click="handleShowTerms"
+          href="#"
+          type="is-text"
+        >
+          termos de uso.
+        </a>
+      </p>
+
       <recaptcha
         @verify="handleRecaptchaVerify"
-        class="mb-3"
+        class="mb-4"
       />
 
       <div class="level">
@@ -169,21 +180,28 @@
               type="is-success"
               native-type="submit"
             >
-              Enviar
+              Cadastrar
             </b-button>
           </div>
         </div>
       </div>
     </form>
+
+    <terms-of-use
+      :is-active="showTerms"
+      @close="handleClose"
+    />
   </ValidationObserver>
 </template>
 
 <script>
 import Recaptcha from '@/components/Recaptcha'
+import TermsOfUse from '@/components/TermsOfUse'
 
 export default {
   components: {
-    Recaptcha
+    Recaptcha,
+    TermsOfUse
   },
   data () {
     return {
@@ -203,7 +221,8 @@ export default {
           text: 'Psiquiatra',
           value: '3'
         }
-      ]
+      ],
+      showTerms: false
     }
   },
   methods: {
@@ -234,6 +253,14 @@ export default {
 
     handleRecaptchaVerify (value) {
       this.form.recaptcha = value
+    },
+
+    handleShowTerms () {
+      this.showTerms = true
+    },
+
+    handleClose () {
+      this.showTerms = false
     }
   }
 }
