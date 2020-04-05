@@ -1,5 +1,5 @@
 <template>
-  <section class="hero is-light is-fullheight is-bold">
+  <section class="hero is-dark is-fullheight is-bold">
     <div class="hero-head">
       <nav-bar />
     </div>
@@ -8,14 +8,35 @@
     <div class="hero-body">
       <div class="container">
         <div class="content">
-          <h1 class="title has-text-centered">
-            Cadastro de participante
+          <h1 class="title">
+            Olá, participante.
           </h1>
-          <div class="columns is-centered">
-            <div class="column is-half">
-              <guest-signup-form />
-            </div>
-          </div>
+          <p>
+            Antes de mais nada, seja bem-vindo(a)! Estamos aqui para te ajudar nesse período conturbado.
+          </p>
+          <p>
+            A <b>Count On Us </b> é uma plataforma que busca aproximar pessoas em isolamento que estejam precisando de auxílio e profissionais voluntários que estejam disponíveis para auxiliá-las.
+            Este é um serviço 100% gratuito e voluntário, formulado excepcionalmente devido à crise da pandemia do COVID-19.
+          </p>
+          <p>
+            Quer saber mais? Visite a página
+            <nuxt-link
+              to="/how-it-works"
+              class=""
+            >
+              como funciona.
+            </nuxt-link>
+          </p>
+        </div>
+        <div class="buttons is-centered">
+          <b-button
+            type="is-success"
+            outlined
+            tag="nuxt-link"
+            to="/guest/signup"
+          >
+            Cadastro
+          </b-button>
         </div>
       </div>
     </div>
@@ -24,31 +45,10 @@
 
 <script>
 import NavBar from '@/components/NavBar'
-import GuestSignupForm from '@/components/GuestSignupForm'
 
 export default {
   components: {
-    NavBar,
-    GuestSignupForm
-  },
-  data () {
-    return {
-      form: {},
-      jobOptions: [
-        {
-          text: 'Psicólogo',
-          value: '1'
-        },
-        {
-          text: 'Psicanalista',
-          value: '2'
-        },
-        {
-          text: 'Psiquiatra',
-          value: '3'
-        }
-      ]
-    }
+    NavBar
   }
 }
 </script>
