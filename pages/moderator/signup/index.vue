@@ -9,7 +9,7 @@
       <div class="container">
         <div class="content">
           <h1 class="title has-text-centered">
-            Cadastro de moderador
+            Cadastro de moderador(a)
           </h1>
           <div class="columns is-centered">
             <div class="column is-half">

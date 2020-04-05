@@ -9,7 +9,7 @@
       <div class="container">
         <div class="content">
           <h1 class="title has-text-centered">
-            Login de moderador
+            Login de moderador(a)
           </h1>
           <div class="columns is-centered">
             <div class="column is-half">
