@@ -14,7 +14,7 @@
       tag="nuxt-link"
       to="/moderator"
     >
-      Sou mediador
+      Sou mediador(a)
     </b-button>
   </div>
 </template>

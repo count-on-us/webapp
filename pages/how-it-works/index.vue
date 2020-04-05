@@ -27,7 +27,7 @@
           </p>
 
           <h3 class="has-text-danger">
-            Mediador
+            Mediador(a)
           </h3>
           <p>
             Já se você é um(a) mediador(a), após se cadastrar, nossa equipe de voluntários se encarregará de confirmar o seu cadastro mediante análise dos dados.

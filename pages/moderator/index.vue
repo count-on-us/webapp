@@ -9,7 +9,7 @@
       <div class="container">
         <div class="content">
           <h1 class="title">
-            Olá, mediador.
+            Olá, mediador(a).
           </h1>
           <p>
             Antes de mais nada, muito obrigado! Sua ajuda será fundamental nesse período conturbado.

@@ -19,24 +19,7 @@
         <h2 class="subtitle">
           Ajudando as pessoas a suportar a quarentena do COVID-19
         </h2>
-        <div class="buttons is-centered">
-          <b-button
-            type="is-warning"
-            outlined
-            tag="nuxt-link"
-            to="/guest"
-          >
-            Sou participante
-          </b-button>
-          <b-button
-            type="is-danger"
-            outlined
-            tag="nuxt-link"
-            to="/moderator"
-          >
-            Sou mediador
-          </b-button>
-        </div>
+        <join-buttons />
       </div>
     </div>
   </section>
@@ -44,10 +27,12 @@
 
 <script>
 import NavBar from '@/components/NavBar'
+import JoinButtons from '@/components/JoinButtons'
 
 export default {
   components: {
-    NavBar
+    NavBar,
+    JoinButtons
   }
 }
 </script>
