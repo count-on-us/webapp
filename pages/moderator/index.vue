@@ -54,10 +54,23 @@
 
 <script>
 import NavBar from '@/components/NavBar'
+import { mapGetters } from 'vuex'
 
 export default {
+  middleware: 'check-auth',
+
   components: {
     NavBar
+  },
+
+  computed: {
+    ...mapGetters(['isAuthenticated'])
+  },
+
+  beforeMount () {
+    if (this.isAuthenticated) {
+      this.$router.replace('/moderator/meeting')
+    }
   }
 }
 </script>

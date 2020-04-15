@@ -95,6 +95,9 @@ export default {
     NavBar,
     MeetingForm
   },
+
+  middleware: ['check-auth', 'auth'],
+
   data () {
     return {
       form: {},

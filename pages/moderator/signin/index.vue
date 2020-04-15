@@ -13,7 +13,9 @@
           </h1>
           <div class="columns is-centered">
             <div class="column is-half">
-              <moderator-signin-form />
+              <moderator-signin-form
+                @submit="onSubmit"
+              />
             </div>
           </div>
         </div>
@@ -48,6 +50,17 @@ export default {
           value: '3'
         }
       ]
+    }
+  },
+  methods: {
+    onSubmit (form) {
+      this.$store.dispatch('authenticateUser', {
+        isLogin: true,
+        email: form.email,
+        password: form.password
+      }).then(() => {
+        this.$router.push('/moderator/meeting')
+      })
     }
   }
 }

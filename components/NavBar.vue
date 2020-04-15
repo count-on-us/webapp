@@ -27,10 +27,23 @@
         Como funciona?
       </b-navbar-item>
       <b-navbar-item
+        v-if="!isAuthenticated"
         tag="nuxt-link"
         to="/moderator/signin"
       >
         Login
+      </b-navbar-item>
+      <b-navbar-item
+        v-else
+        tag="div"
+      >
+        <b-button
+          @click="onLogout"
+          type="is-primary"
+          outlined
+        >
+          Logout
+        </b-button>
       </b-navbar-item>
       <b-navbar-item
         tag="div"
@@ -49,8 +62,21 @@
 </template>
 
 <script>
-export default {
+import { mapGetters } from 'vuex'
 
+export default {
+  middleware: 'check-auth',
+
+  computed: {
+    ...mapGetters(['isAuthenticated'])
+  },
+
+  methods: {
+    onLogout () {
+      this.$store.dispatch('logout')
+      this.$router.push('/moderator')
+    }
+  }
 }
 </script>
 
