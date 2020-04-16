@@ -1,5 +1,6 @@
 import Vuex from 'vuex'
 import Cookie from 'js-cookie'
+import ms from 'ms'
 
 const createStore = () => {
   return new Vuex.Store({
@@ -30,13 +31,16 @@ const createStore = () => {
             returnSecureToken: true
           }
         ).then((result) => {
-          vuexContext.commit('setToken', result.idToken)
-          localStorage.setItem('token', result.idToken)
-          localStorage.setItem('tokenExpiration', new Date().getTime() + +result.expiresIn * 1000)
-          Cookie.set('jwt', result.idToken)
-          Cookie.set('expirationDate', new Date().getTime() + +result.expiresIn * 1000)
+          const expiration = new Date().getTime() +
+            typeof result.expiresIn === 'number'
+            ? result.expiresIn
+            : ms(result.expiresIn)
 
-          return this.$axios.$post('http://localhost:3000/api/track-data', { data: 'Authenticated' })
+          vuexContext.commit('setToken', result.accessToken)
+          localStorage.setItem('token', result.accessToken)
+          localStorage.setItem('tokenExpiration', expiration)
+          Cookie.set('jwt', result.accessToken)
+          Cookie.set('expirationDate', expiration)
         }).catch(e => console.log(e))
       },
 
@@ -67,7 +71,7 @@ const createStore = () => {
           expirationDate = localStorage.getItem('tokenExpiration')
         }
 
-        if (new Date().getTime() > +expirationDate || !token) {
+        if (new Date().getTime() > expirationDate || !token) {
           vuexContext.dispatch('logout')
           return
         }
