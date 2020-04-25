@@ -52,7 +52,12 @@ export default {
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
+    ['@nuxtjs/axios', {
+      baseURL: 'http://138.118.173.112/',
+      headers: {
+        'Access-Control-Allow-Origin': '*'
+      }
+    }],
     'nuxt-fontawesome',
     'nuxt-buefy',
     ['nuxt-validate', {
@@ -61,12 +66,6 @@ export default {
     'nuxt-dayjs-module'
   ],
   buefy: {
-  },
-  /*
-  ** Axios module configuration
-  ** See https://axios.nuxtjs.org/options
-  */
-  axios: {
   },
   /*
   ** Build configuration
@@ -96,6 +95,6 @@ export default {
   },
 
   env: {
-    recaptchaSiteKey: '6LeGrOUUAAAAAKMZFyYQrCjSnBtdcfD0SAx88Thr'
+    recaptchaSiteKey: '6LeGrOUUAAAAAKMZFyYQrCjSnBtdcfD0SAx88Thr',
   }
 }
