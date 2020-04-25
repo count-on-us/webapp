@@ -53,10 +53,7 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     ['@nuxtjs/axios', {
-      baseURL: 'http://138.118.173.112/',
-      headers: {
-        'Access-Control-Allow-Origin': '*'
-      }
+      baseURL: 'https://count-on-us.online/'
     }],
     'nuxt-fontawesome',
     'nuxt-buefy',
@@ -95,6 +92,6 @@ export default {
   },
 
   env: {
-    recaptchaSiteKey: '6LeGrOUUAAAAAKMZFyYQrCjSnBtdcfD0SAx88Thr',
+    recaptchaSiteKey: '6LeGrOUUAAAAAKMZFyYQrCjSnBtdcfD0SAx88Thr'
   }
 }
