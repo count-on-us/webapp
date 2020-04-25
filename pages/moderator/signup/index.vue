@@ -38,7 +38,14 @@ export default {
     }
   },
   methods: {
-    handleSubmit () {
+    handleSubmit (form) {
+      this.$store.dispatch('registerUser', {
+        ...form
+      }).then(() => {
+        if (this.$store.getters.isAuthenticated) {
+          this.$router.push('/moderator/meeting')
+        }
+      })
     }
   }
 }

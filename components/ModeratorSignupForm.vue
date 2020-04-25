@@ -52,7 +52,7 @@
           class="mb-3"
         >
           <b-select
-            v-model="form.job"
+            v-model="form.profession"
             placeholder="Selecione uma profissão"
           >
             <option
@@ -78,7 +78,7 @@
           class="mb-3"
         >
           <b-input
-            v-model="form.register"
+            v-model="form.licenseNumber"
             placeholder="Insira seu registro"
           />
         </b-field>
@@ -86,7 +86,7 @@
 
       <ValidationProvider
         v-slot="{ errors, valid }"
-        :rules="{ required: true, regex: /\([0-9]{2}\)\s[0-9]{5}-[0-9]{4}/ }"
+        :rules="{ required: true }"
         name="telefone"
       >
         <b-field

@@ -55,7 +55,6 @@ export default {
   methods: {
     onSubmit (form) {
       this.$store.dispatch('authenticateUser', {
-        isLogin: true,
         email: form.email,
         password: form.password
       }).then(() => {
