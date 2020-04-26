@@ -49,7 +49,8 @@ export default {
           text: 'Psiquiatra',
           value: '3'
         }
-      ]
+      ],
+      showNotification: false
     }
   },
   methods: {
@@ -59,6 +60,30 @@ export default {
         password: form.password
       }).then(() => {
         this.$router.push('/moderator/meeting')
+      }).catch((e) => {
+        if (e.response.status === 401) {
+          this.$buefy.notification.open({
+            duration: 3000,
+            message: 'E-mail ou senha incorretos.',
+            position: 'is-bottom',
+            type: 'is-danger'
+          })
+          return
+        }
+
+        let html = Array.isArray(e.response.data.message)
+          ? e.response.data.message.reduce((acc, msg) => acc + `<li class="is-capitalized">${msg}</li>`, '')
+          : `<li class="is-capitalized">${e.response.data.message}</li>`
+
+        html = `<div class="content"><ul class="has-text-left">${html}</ul></div>`
+
+        this.$swal({
+          icon: 'error',
+          title: e.response.data.message > 1
+            ? 'Oops... Alguns erros aconteceram'
+            : 'Oops... Um erro aconteceu',
+          html
+        })
       })
     }
   }

@@ -79,6 +79,13 @@ export default {
       form: {}
     }
   },
+  mounted () {
+    this.form = {}
+
+    this.$nextTick(() => {
+      this.$refs.moderatorSigninForm.reset()
+    })
+  },
   methods: {
     onSubmit () {
       this.$refs.moderatorSigninForm.validate().then((success) => {
@@ -87,11 +94,6 @@ export default {
         }
 
         this.$emit('submit', this.form)
-        this.form = {}
-
-        this.$nextTick(() => {
-          this.$refs.moderatorSigninForm.reset()
-        })
       })
     }
   }

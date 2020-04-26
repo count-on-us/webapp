@@ -38,7 +38,7 @@ const createStore = () => {
           localStorage.setItem('tokenExpiration', expiration)
           Cookie.set('jwt', result.accessToken)
           Cookie.set('expirationDate', expiration)
-        }).catch(e => console.log(e))
+        })
       },
 
       registerUser (vuexContext, authData) {
