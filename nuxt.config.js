@@ -60,7 +60,8 @@ export default {
     ['nuxt-validate', {
       lang: 'pt_BR'
     }],
-    'nuxt-dayjs-module'
+    'nuxt-dayjs-module',
+    'vue-sweetalert2/nuxt'
   ],
   buefy: {
   },

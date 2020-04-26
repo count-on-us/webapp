@@ -50,18 +50,7 @@ const createStore = () => {
             ...authData,
             returnSecureToken: true
           }
-        ).then((result) => {
-          const expiration = new Date().getTime() +
-            typeof result.expiresIn === 'number'
-            ? result.expiresIn
-            : ms(result.expiresIn)
-
-          vuexContext.commit('setToken', result.accessToken)
-          localStorage.setItem('token', result.accessToken)
-          localStorage.setItem('tokenExpiration', expiration)
-          Cookie.set('jwt', result.accessToken)
-          Cookie.set('expirationDate', expiration)
-        }).catch(e => console.log(e))
+        )
       },
 
       initAuth (vuexContext, req) {

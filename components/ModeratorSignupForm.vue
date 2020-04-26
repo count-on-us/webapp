@@ -68,7 +68,10 @@
 
       <ValidationProvider
         v-slot="{ errors, valid }"
-        rules="required"
+        :rules="{
+          required: true,
+          register: true
+        }"
         name="registro"
       >
         <b-field
@@ -79,14 +82,17 @@
         >
           <b-input
             v-model="form.licenseNumber"
-            placeholder="Insira seu registro"
+            placeholder="000...0/BA"
           />
         </b-field>
       </ValidationProvider>
 
       <ValidationProvider
         v-slot="{ errors, valid }"
-        :rules="{ required: true }"
+        :rules="{
+          required: true,
+          min: 11,
+        }"
         name="telefone"
       >
         <b-field
@@ -97,7 +103,7 @@
         >
           <b-input
             v-model="form.phone"
-            placeholder="Insira seu telefone"
+            placeholder="(99) 99999-9999"
             type="tel"
           />
         </b-field>
@@ -105,7 +111,12 @@
 
       <ValidationProvider
         v-slot="{ errors, valid }"
-        rules="required"
+        :rules="{
+          required: true,
+          min: 8,
+          max: 20,
+          password: true,
+        }"
         name="senha"
         vid="senha"
       >
@@ -211,19 +222,26 @@ export default {
       jobOptions: [
         {
           text: 'Psicólogo',
-          value: '1'
+          value: 'Psicólogo'
         },
         {
           text: 'Psicanalista',
-          value: '2'
+          value: 'Psicanalista'
         },
         {
           text: 'Psiquiatra',
-          value: '3'
+          value: 'Psiquiatra'
         }
       ],
       showTerms: false
     }
+  },
+  mounted () {
+    this.form = {}
+
+    this.$nextTick(() => {
+      this.$refs.moderatorSignupForm.reset()
+    })
   },
   methods: {
     onSubmit () {
@@ -243,11 +261,6 @@ export default {
         }
 
         this.$emit('submit', this.form)
-        this.form = {}
-
-        this.$nextTick(() => {
-          this.$refs.moderatorSignupForm.reset()
-        })
       })
     },
 
