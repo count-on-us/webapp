@@ -54,7 +54,7 @@
 
       <recaptcha
         @verify="handleRecaptchaVerify"
-        class="mb-3"
+        class="mb-3 recaptcha"
       />
 
       <div class="level">

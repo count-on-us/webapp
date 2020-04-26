@@ -168,7 +168,7 @@
 
       <recaptcha
         @verify="handleRecaptchaVerify"
-        class="mb-4"
+        class="mb-4 recaptcha"
       />
 
       <div class="level">

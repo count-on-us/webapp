@@ -484,3 +484,8 @@
 	-ms-flex-item-align: stretch!important;
 	align-self: stretch!important
 }
+
+.recaptcha iframe {
+	max-height: 78px !important;
+	height: 78px;
+}
