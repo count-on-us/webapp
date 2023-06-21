@@ -19,7 +19,7 @@
     "@nuxtjs/bulma": "^1.2.1",
     "js-cookie": "^2.2.1",
     "ms": "^2.1.2",
-    "nuxt": "^2.12.2",
+    "nuxt": "^3.4.3",
     "nuxt-buefy": "^0.3.28",
     "nuxt-dayjs-module": "^1.1.2",
     "nuxt-fontawesome": "^0.4.0",
